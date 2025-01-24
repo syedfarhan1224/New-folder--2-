@@ -13,7 +13,8 @@ const Register = () => {
     e.preventDefault();
 
     try {
-      const response = await axios.post("http://localhost:3030/register", {
+      // const response = await axios.post("http://localhost:3030/register", {
+      const response = await axios.post("https://serverprac.vercel.app/register", {
         firstName,
         email,
         password,

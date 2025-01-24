@@ -12,7 +12,8 @@ const Login = () => {
     e.preventDefault();
 
     try {
-      const response = await axios.post("http://localhost:3030/login", {
+      // const response = await axios.post("http://localhost:3030/login", {
+      const response = await axios.post("https://serverprac.vercel.app/login", {
         email,
         password,
       });
