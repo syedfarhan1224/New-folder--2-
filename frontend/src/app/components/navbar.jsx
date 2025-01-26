@@ -31,35 +31,35 @@ const Navbar = () => {
 
         {/* Links */}
         <div
-          className={`absolute top-16 left-0 w-full  md:static md:flex md:space-x-6 md:items-center md:w-auto ${
+          className={` absolute top-16 left-0 w-full  md:static md:flex md:space-x-6 md:items-center md:w-auto ${
             isOpen ? "block" : "hidden"
           }`}
         >
           <ul className="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-6 py-4 md:py-0">
           <li>
-              <Link href="/home">
-                <span className="hover:text-yellow-300 cursor-pointer">
+              <Link href="/LandingPage">
+                <span className="hover:text-yellow-300 text-black cursor-pointer">
                   Home
                 </span>
               </Link>
             </li>
             <li>
               <Link href="/dashboard">
-                <span className="hover:text-yellow-300 cursor-pointer">
+                <span className="hover:text-yellow-300 text-black cursor-pointer">
                 Dashboard
                 </span>
               </Link>
             </li>
             <li>
               <Link href="/loan-request-form">
-                <span className="hover:text-yellow-300 cursor-pointer">
+                <span className="hover:text-yellow-300 text-black cursor-pointer">
                 Loan Request Form
                 </span>
               </Link>
             </li>
             <li>
               <Link href="/calculator">
-                <span className="hover:text-yellow-300 cursor-pointer">
+                <span className="hover:text-yellow-300 text-black cursor-pointer">
                 Calculator
                 </span>
               </Link>
