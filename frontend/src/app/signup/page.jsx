@@ -1,6 +1,7 @@
 "use client"
 import React, { useState } from "react";
 import axios from "axios";
+import Link from "next/link";
 
 const Register = () => {
   const [firstName, setFirstName] = useState("");
@@ -13,8 +14,7 @@ const Register = () => {
     e.preventDefault();
 
     try {
-      // const response = await axios.post("http://localhost:3030/register", {
-      const response = await axios.post("https://serverprac.vercel.app/register", {
+      const response = await axios.post("http://localhost:3030/register", {
         firstName,
         email,
         password,
@@ -98,6 +98,17 @@ const Register = () => {
             Register
           </button>
         </form>
+        <div className="mt-6 text-center">
+              <p className="text-sm text-gray-600">
+              Already have an account?{" "}
+              <Link
+                href="./login"
+                className="text-blue-600 hover:text-blue-700 font-semibold"
+              >
+                Login here
+              </Link>
+            </p>
+          </div>
       </div>
     </div>
   );

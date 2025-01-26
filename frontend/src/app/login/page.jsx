@@ -1,19 +1,21 @@
-"use client"
+"use client";
 import React, { useState } from "react";
 import axios from "axios";
+import Link from "next/link";
+import { useRouter } from "next/navigation"; // Correct import for useRouter in the app directory
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
   const [successMessage, setSuccessMessage] = useState("");
+  const router = useRouter(); // Initialize the router
 
   const handleLogin = async (e) => {
     e.preventDefault();
 
     try {
-      // const response = await axios.post("http://localhost:3030/login", {
-      const response = await axios.post("https://serverprac.vercel.app/login", {
+      const response = await axios.post("http://localhost:3030/login", {
         email,
         password,
       });
@@ -21,6 +23,8 @@ const Login = () => {
       setErrorMessage("");
       // Store the token in localStorage
       localStorage.setItem("token", response.data.token);
+      // Navigate to the home page
+      router.push("/home"); // Replace "/home" with your actual home page route
     } catch (error) {
       setErrorMessage(
         error.response?.data?.message || "An error occurred. Try again."
@@ -79,6 +83,18 @@ const Login = () => {
             Login
           </button>
         </form>
+
+        <div className="mt-6 text-center">
+          <p className="text-sm text-gray-600">
+            Don't have an account?{" "}
+            <Link
+              href="./signup"
+              className="text-blue-600 hover:text-blue-700 font-semibold"
+            >
+              Sign up here
+            </Link>
+          </p>
+        </div>
       </div>
     </div>
   );
